@@ -17,11 +17,11 @@
     --es-header-bg: #3F5F7F;
 
     /* Font size scale — tweak these to shift everything together */
-    --fs-xs: 10px;
-    --fs-sm: 13px;
-    --fs-base: 14px;
-    --fs-md: 14px;
-    --fs-lg: 15px;
+    --fs-xs: 13px;
+    --fs-sm: 14px;
+    --fs-base: 15px;
+    --fs-md: 15px;
+    --fs-lg: 16px;
   }
 
   /* =====================================================
@@ -89,30 +89,27 @@
     color: #222;
   }
 
-  .es-check::placeholder {
+  input::placeholder {
     font-family: var(--es-font);
     font-size: var(--fs-sm);
-    color: #aaa;
+    color: #242424 !important;
   }
 
   .es-title {
     margin-left: auto;
-    width: max-content;
+    width: 320px;
+    max-width: 60%;
     text-align: right;
     font-family: var(--es-font);
     font-weight: 800;
     font-size: var(--fs-md);
     letter-spacing: 1px;
     color: #fff;
-    padding: 4px 0;
-    text-transform: uppercase;
-    margin-left: auto;
-    width: 320px;
-    text-align: right;
     padding: 10px 14px;
+    text-transform: uppercase;
     background: linear-gradient(135deg, #3F5F7F, #3F5F7F);
     clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
-}
+  }
 
   /* =====================================================
    GRID LAYOUT
@@ -361,11 +358,6 @@
     text-align: left !important;
   }
 
-  .cmp-name {
-    font-family: var(--es-font);
-    font-size: var(--fs-md);
-    font-weight: 700;
-  }
 
   .subhead-earnings-label {
     text-align: left;
@@ -444,7 +436,7 @@
   .es-td.es-lbl {
     font-family: var(--es-font);
     font-size: var(--fs-sm);
-    font-weight: 600;
+    font-weight: 500;
     margin: auto 0;
     color: #333;
     padding-left: 6px;
@@ -795,23 +787,6 @@
     #step-2 {
       width: 100%;
     }
-
-    .es-title {
-      width: 240px;
-    }
-
-    .es-row.es-4,
-    .es-row.es-payrow {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .es-row.es-6 {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .es-middle {
-      grid-template-columns: 1fr !important;
-    }
   }
 
   /* =====================================================
@@ -827,13 +802,15 @@
     }
 
     .es-card {
-      padding: 8px;
+      padding: 8px 0;
     }
 
     .card-padding {
       padding: 10px;
     }
-
+    .es-ribbon {
+      flex-direction: column-reverse;
+    }
     .es-title {
       font-size: 11px;
       letter-spacing: 0.5px;
@@ -856,10 +833,6 @@
 
     .es-btn {
       padding: 9px 20px;
-    }
-
-    .es-row.es-6 {
-      grid-template-columns: 1fr 1fr;
     }
 
     /* Deposit slip at 650px */
@@ -941,26 +914,6 @@
    RESPONSIVE — ≤ 480px  (extra small)
 ===================================================== */
   @media (max-width: 480px) {
-
-    .es-row.es-4,
-    .es-row.es-payrow {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .es-row.es-6 {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .es-ribbon {
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .es-title {
-      margin-left: 0;
-      text-align: left;
-      width: auto;
-    }
 
     /* Deposit slip extra-small */
     .ds-top {
