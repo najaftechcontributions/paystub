@@ -22,7 +22,7 @@ if (isset($_GET['ref_id']) && !empty($_GET['ref_id'])) {
 
   <div class="calc-iframe-wrapper" id="calc-iframe-wrapper">
     <iframe id="paystub-frame"
-      src="http://paystub.local/wp-content/plugins/bestpaystub-calculator/Pages/../APP/app.php?enable_addon=0"
+      src="<?php echo plugins_url('/../APP/app.php?enable_addon=0', __FILE__); ?>"
       style="width:100%; border:0; display:block; overflow:hidden;" scrolling="no" loading="lazy"
       allowfullscreen></iframe>
   </div>

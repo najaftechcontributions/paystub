@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 </style>
 
 
@@ -40,8 +40,8 @@
 
     --green: #304a89;
     --theme-grey:#232931;
-    --default-font:"Roboto", sans-serif;
-    --input-font:"Roboto", sans-serif;
+    --default-font:"PT Sans", sans-serif;
+    --input-font:"PT Sans", sans-serif;
     --sliders:var(--theme);
 
 /*    --lato-font:"Lato", sans-serif;*/

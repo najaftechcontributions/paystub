@@ -36,7 +36,7 @@ function my_plugin_enqueue_google_fonts()
   echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
 
   // Enqueue Google Fonts stylesheet
-  echo '<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">' . "\n";
+  echo '<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">' . "\n";
 }
 add_action('wp_head', 'my_plugin_enqueue_google_fonts');
 
@@ -56,6 +56,3 @@ register_activation_hook(__FILE__, 'CREATE_PAYSTUB_TB');
 
 add_action('admin_enqueue_scripts', 'add_kzr_css_PSC_happs');
 add_action('admin_menu', 'admin_menu_PSC_happs');
-
-
-
