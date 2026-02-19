@@ -658,7 +658,7 @@
     border: 1px solid #d0d0d0;
     padding: 9px 12px;
     font-size: var(--fs-base);
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 3px;
     line-height: 1.2;
     white-space: nowrap;
@@ -707,7 +707,7 @@
     padding: 7px 10px;
     border-radius: 3px;
     font-size: var(--fs-md);
-    font-weight: 700;
+    font-weight: 500;
     font-family: var(--es-font);
   }
 
@@ -725,7 +725,7 @@
 
   .ds-badge-sub {
     font-size: var(--fs-xs);
-    font-weight: 700;
+    font-weight: 500;
     color: #333;
     margin-top: 2px;
     font-family: var(--es-font);

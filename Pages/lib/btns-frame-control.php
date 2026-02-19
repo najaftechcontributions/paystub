@@ -12,7 +12,7 @@
 
   .paypal-cst-cont {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     margin: 16px auto 0;
   }
 
