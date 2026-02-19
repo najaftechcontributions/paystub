@@ -1,0 +1,37 @@
+.btn {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff4a;
+    color: #fffafa;
+    border: 1px solid #949494;
+    border-radius: 25px;
+    padding: 4px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 220px;
+    /* height: 50px; */
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* Darker background on mouse-over */
+.btn:hover {
+
+  outline: none;
+  background-color: white;
+  border:1px solid white;
+  color: var(--theme);
+  transition: 0.4s;
+  transform: scale(0.9);
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+ 
+
+}

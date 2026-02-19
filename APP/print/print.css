@@ -1,0 +1,13 @@
+/* =====================================
+   PRINT: Portrait page, scaled content
+   ===================================== */
+@media print {
+
+  @page {
+  /*size: 32.5in 33in;*/
+  /*margin: 0.5in;*/
+}
+
+  [no-print="1"]{display: none;}
+
+}

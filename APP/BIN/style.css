@@ -1,0 +1,158 @@
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+  color: rgb(255, 255 ,255 , 0.9);
+  opacity: 0.9; /* Firefox */
+}
+
+
+input.khyzer[type=text], input.ro[type=text], input.khyzer[type=email], input.khyzer[type=password], select.khyzer, textarea {
+    border: 0px solid #e85b2a;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 6px;
+    width: 160px;
+    text-align: center;
+    display: inline-block;
+    color: #ffffff;
+/*    float: right;*/
+    font-size: 16px;
+    /* border-radius: 6px; */
+    font-weight: 400;
+    font-family: var(--input-font);
+}
+
+
+
+input[type=text]:focus {
+  /*border-bottom:2px solid #3f51b5;*/
+
+}
+
+
+
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+:focus:-ms-input-placeholder {  
+  opacity: 0;
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+select.khyzer {
+/*     color: black; */
+    /* background: transparent; */
+    /* border: 1px solid white; */
+    /* border-bottom: 1px solid white; */
+    text-align: center;
+    text-align-last: center;
+/*    border-radius: 0px;*/
+    /* margin-top: 12px; */
+    max-width: 250px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 169px;
+/*    font-weight: 300;*/
+
+
+}
+
+select.khyzer option { padding: 4px;cursor: pointer;color:black; }
+/*select option:first-child{
+  color: white;
+}*/
+
+select.khyzer:focus{
+  outline: none;
+  /*color:black;*/
+  /*font-weight: bold;*/
+}
+
+
+input[type=password]:focus {
+  border-bottom: 0px solid black;
+
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+
+
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font size:22px;
+  font-weight:600;
+  margin-top: 1px;
+  color: black;
+  /*text-align: none;*/
+
+}
+
+
+
+
+
+
+.col-25 {
+  float: left;
+  width: 60%;
+  margin-top: 8px;
+  /*border:1px solid black;*/
+  /*text-align: right;*/
+  /*padding-right:12px; */
+  /*border:1px solid black;*/
+
+}
+
+
+
+.col-75 {
+  float: left;
+  width: 35%;
+    margin-top: 8px;
+    /*border:1px solid black;*/
+    /*border:1px solid black;*/
+
+}
+
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+  font-size: 12px;
+}
+
+
+
+}
