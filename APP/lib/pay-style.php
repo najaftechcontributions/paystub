@@ -14,7 +14,7 @@
     --es-white: white;
     --es-shadow: 0 2px 10px rgba(0, 0, 0, .08);
     --es-font: "PT Sans", sans-serif;
-    --es-header-bg: #dfdfdf;
+    --es-header-bg: #3F5F7F;
 
     /* Font size scale — tweak these to shift everything together */
     --fs-xs: 10px;
@@ -103,14 +103,14 @@
     font-weight: 800;
     font-size: var(--fs-md);
     letter-spacing: 1px;
-    color: var(--es-header-bg);
+    color: #fff;
     padding: 4px 0;
     text-transform: uppercase;
     margin-left: auto;
     width: 320px;
     text-align: right;
     padding: 10px 14px;
-    background: linear-gradient(135deg, #6a6a6a, #3d3d3d);
+    background: linear-gradient(135deg, #3F5F7F, #3F5F7F);
     clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -260,7 +260,7 @@
   }
 
   .white-text {
-    color: #000 !important;
+    color: #fff !important;
     font-size: var(--fs-xs);
     font-family: var(--es-font);
     font-weight: 700;
