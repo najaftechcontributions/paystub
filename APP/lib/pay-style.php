@@ -14,14 +14,14 @@
     --es-white: white;
     --es-shadow: 0 2px 10px rgba(0, 0, 0, .08);
     --es-font: "PT Sans", sans-serif;
-    --es-header-bg: #3F5F7F;
+    --es-header-bg: #dfdfdf;
 
     /* Font size scale — tweak these to shift everything together */
-    --fs-xs:   10px;
-    --fs-sm:   11px;
-    --fs-base: 13px;
-    --fs-md:   14px;
-    --fs-lg:   15px;
+    --fs-xs: 10px;
+    --fs-sm: 13px;
+    --fs-base: 14px;
+    --fs-md: 14px;
+    --fs-lg: 15px;
   }
 
   /* =====================================================
@@ -40,6 +40,14 @@
   .es-actions,
   .es-actions * {
     font-family: var(--es-font);
+  }
+
+  .fa-classic,
+  .fa-regular,
+  .fa-solid,
+  .far,
+  .fas {
+    font-family: "Font Awesome 6 Free" !important;
   }
 
   .es-wrap {
@@ -115,9 +123,17 @@
     background: white;
   }
 
-  .es-row.es-1 { grid-template-columns: 1fr; }
-  .es-row.es-2 { grid-template-columns: 1fr 1fr; }
-  .es-row.es-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .es-row.es-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .es-row.es-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .es-row.es-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 
   .es-row.es-6 {
     grid-template-columns: 1fr 1.2fr 1fr 1.2fr 1.5fr .7fr;
@@ -238,7 +254,7 @@
   }
 
   .white-text {
-    color: white !important;
+    color: #000 !important;
     font-size: var(--fs-xs);
     font-family: var(--es-font);
     font-weight: 700;
@@ -265,24 +281,79 @@
     font-family: var(--es-font);
   }
 
-  .border-none     { border: none; }
-  .input-border-top-bottom { border-left: none; border-right: none; }
-  .border-btm      { border-bottom: 1px solid var(--es-border); }
-  .padding-r       { padding-right: 6px; }
-  .padding-l       { padding-left: 6px; }
-  .padding-l-8     { padding-left: 8px; }
-  .padding-r-8     { padding-right: 8px; }
-  .m-t-8           { margin-top: 8px; }
-  .zero-pad-marg   { margin: 0; padding: 0; }
-  .row-gap         { gap: 5px; }
-  .flex            { display: flex; }
-  .flex-row        { flex-direction: row; }
-  .flex-col        { flex-direction: column; }
-  .flex-gap-5      { gap: 5px; }
-  .p-margin p      { margin: 0 !important; }
-  .p-weight        { font-weight: 700; }
-  .margin-0        { margin: 0 !important; }
-  .txt-lft         { text-align: left !important; }
+  .border-none {
+    border: none;
+  }
+
+  .input-border-top-bottom {
+    border-left: none;
+    border-right: none;
+  }
+
+  .border-btm {
+    border-bottom: 1px solid var(--es-border);
+  }
+
+  .padding-r {
+    padding-right: 6px;
+  }
+
+  .padding-l {
+    padding-left: 6px;
+  }
+
+  .padding-l-8 {
+    padding-left: 8px;
+  }
+
+  .padding-r-8 {
+    padding-right: 8px;
+  }
+
+  .m-t-8 {
+    margin-top: 8px;
+  }
+
+  .zero-pad-marg {
+    margin: 0;
+    padding: 0;
+  }
+
+  .row-gap {
+    gap: 5px;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-gap-5 {
+    gap: 5px;
+  }
+
+  .p-margin p {
+    margin: 0 !important;
+  }
+
+  .p-weight {
+    font-weight: 700;
+  }
+
+  .margin-0 {
+    margin: 0 !important;
+  }
+
+  .txt-lft {
+    text-align: left !important;
+  }
 
   .cmp-name {
     font-family: var(--es-font);
@@ -290,8 +361,13 @@
     font-weight: 700;
   }
 
-  .subhead-earnings-label  { text-align: left; }
-  .deductions-table-inner  { padding-left: 5px; }
+  .subhead-earnings-label {
+    text-align: left;
+  }
+
+  .deductions-table-inner {
+    padding-left: 5px;
+  }
 
   /* =====================================================
    EARNINGS / DEDUCTIONS TABLES
@@ -664,11 +740,11 @@
 ===================================================== */
   @media (max-width: 1000px) {
     :root {
-      --fs-xs:   9px;
-      --fs-sm:   10px;
+      --fs-xs: 9px;
+      --fs-sm: 10px;
       --fs-base: 12px;
-      --fs-md:   13px;
-      --fs-lg:   14px;
+      --fs-md: 13px;
+      --fs-lg: 14px;
     }
 
     .es-in,
@@ -737,11 +813,11 @@
 ===================================================== */
   @media (max-width: 650px) {
     :root {
-      --fs-xs:   9px;
-      --fs-sm:   10px;
+      --fs-xs: 9px;
+      --fs-sm: 10px;
       --fs-base: 11px;
-      --fs-md:   12px;
-      --fs-lg:   13px;
+      --fs-md: 12px;
+      --fs-lg: 13px;
     }
 
     .es-card {
@@ -781,12 +857,29 @@
     }
 
     /* Deposit slip at 650px */
-    .ds-badge       { min-width: 55%; }
-    .ds-payee       { width: 40%; }
-    .ds-pay-label   { width: 5%; }
-    .ds-amount-words { width: 65%; }
-    .ds-amount-box  { min-width: 28%; }
-    .ds-payee-box   { min-width: 100%; }
+    .ds-badge {
+      min-width: 55%;
+    }
+
+    .ds-payee {
+      width: 40%;
+    }
+
+    .ds-pay-label {
+      width: 5%;
+    }
+
+    .ds-amount-words {
+      width: 65%;
+    }
+
+    .ds-amount-box {
+      min-width: 28%;
+    }
+
+    .ds-payee-box {
+      min-width: 100%;
+    }
   }
 
   /* =====================================================
@@ -842,6 +935,7 @@
    RESPONSIVE — ≤ 480px  (extra small)
 ===================================================== */
   @media (max-width: 480px) {
+
     .es-row.es-4,
     .es-row.es-payrow {
       grid-template-columns: 1fr 1fr;

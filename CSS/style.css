@@ -1,39 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-.shadow{
-    -webkit-box-shadow: 2px -1px 17px -4px rgba(0,0,0,0.28);
--moz-box-shadow: 2px -1px 17px -4px rgba(0,0,0,0.28);
-box-shadow: 2px -1px 17px -4px rgba(0,0,0,0.28);
-padding: 20px; 
-border-radius: 20px;
-background-color: white;
-    }
+:root {
+  --admin-font: "PT Sans", sans-serif;
+  --admin-primary: #3F5F7F;
+  --admin-radius: 8px;
+}
 
-.font{font-family: 'PT Sans', sans-serif;}    
+/* ── Admin page wrapper ──────────────────── */
+.shadow {
+  box-shadow: 2px -1px 17px -4px rgba(0, 0, 0, 0.18);
+  padding: 28px 32px;
+  border-radius: var(--admin-radius);
+  background-color: #fff;
+  font-family: var(--admin-font);
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 20px;
+}
 
+.font {
+  font-family: var(--admin-font);
+}
 
-    .inp-shadow{
-    -webkit-box-shadow: 0px -1px 12px 1px rgba(199,199,199,1);
--moz-box-shadow: 0px -1px 12px 1px rgba(199,199,199,1);
-box-shadow: 0px -1px 12px 1px rgba(199,199,199,1);
-border-radius: 9px;
-    }
+/* ── Admin headings ──────────────────────── */
+.shadow h1 {
+  font-family: var(--admin-font);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--admin-primary);
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e8edf2;
+}
 
+.shadow h2 {
+  font-family: var(--admin-font);
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  margin: 16px 0 8px;
+}
 
-.btn{
-	background-color: red;
-	color: white;
-	padding: 12px;
-	border:1px solid red;
-	cursor: pointer;
-	width: 200px;
+.shadow p {
+  font-family: var(--admin-font);
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.shadow a {
+  font-family: var(--admin-font);
+  color: var(--admin-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.shadow a:hover {
+  text-decoration: underline;
+}
+
+/* ── Shortcode blocks ────────────────────── */
+.shadow code {
+  font-size: 15px;
+  background: #f4f6f8;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #c0392b;
+  border: 1px solid #e0e0e0;
+}
+
+/* ── Input shadow helper ─────────────────── */
+.inp-shadow {
+  box-shadow: 0px -1px 12px 1px rgba(199, 199, 199, 1);
+  border-radius: 9px;
+}
+
+/* ── Admin button ────────────────────────── */
+.btn {
+  font-family: var(--admin-font);
+  background-color: var(--admin-primary);
+  color: #fff;
+  padding: 10px 24px;
+  border: 1px solid var(--admin-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   outline: none;
-}    
+  transition: background 0.2s, transform 0.15s;
+}
 
-
-.btn:hover{
-  
-  border:1px solid red;
-  transform: scale(1.1);
+.btn:hover {
+  background-color: transparent;
+  color: var(--admin-primary);
+  border: 1px solid var(--admin-primary);
+  transform: scale(1.04);
   transition: 0.2s;
 }

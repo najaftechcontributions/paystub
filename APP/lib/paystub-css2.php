@@ -15,6 +15,7 @@
     font-size: 13px;
     font-weight: 700;
     margin: 8px 0;
+    text-transform: uppercase;
   }
 
   .checkbox {

@@ -3,7 +3,7 @@
 <div addon_paystub="1" class="stub-deposit-column"><?php include __DIR__.'/stub_template.php'; ?></div>
 
 <div class="es-actions" action-btn="preview" no-print="1">
-      <button class="es-btn" type="submit" action_="preview-stub">PREVIEW STUB <i class="fad fa-chevron-double-right"></i></button>
+      <button class="es-btn" type="submit" action_="preview-stub">PREVIEW STUB <i class="fa-solid fa-angles-right"></i></button>
       <div class="es-note">
         <p>By clicking 'Preview Stub' button you are agreeing to the <u>Terms and Conditions</u>.</p>
       </div>
