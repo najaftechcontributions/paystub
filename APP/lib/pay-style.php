@@ -106,7 +106,13 @@
     color: var(--es-header-bg);
     padding: 4px 0;
     text-transform: uppercase;
-  }
+    margin-left: auto;
+    width: 320px;
+    text-align: right;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #6a6a6a, #3d3d3d);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
 
   /* =====================================================
    GRID LAYOUT
