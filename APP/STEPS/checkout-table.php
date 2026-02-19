@@ -41,33 +41,53 @@
 
 <style>
   .os-wrap {
-    font-size: 15px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 18px;
   }
 
   .os-title {
-    margin: 0 0 10px;
-    font-size: 18px;
+    font-family: "PT Sans", sans-serif;
+    margin: 0 0 12px;
+    font-size: 17px;
     font-weight: 700;
+    color: #1a6fa3;
+    letter-spacing: 0.3px;
   }
 
   .os-table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #969d9f;
+    border: 1px solid #bcc5cc;
     background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: "PT Sans", sans-serif;
   }
 
   .os-table th,
   .os-table td {
-    border: 1px solid #969d9f;
-    padding: 8px 10px;
+    border: 1px solid #bcc5cc;
+    padding: 9px 11px;
     vertical-align: middle;
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
   }
 
   .os-table thead th {
-    background: #dfdfdf;
+    background: #3F5F7F;
+    color: #fff;
     font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .os-table tbody tr:hover {
+    background: #f5faff;
   }
 
   .os-center {
@@ -78,51 +98,52 @@
     text-align: right;
   }
 
-  .os-col-sno {
-    width: 56px;
-  }
-
-  .os-col-item {
-    width: auto;
-  }
-
-  .os-col-unit {
-    width: 110px;
-  }
-
-  .os-col-qty {
-    width: 70px;
-  }
-
-  .os-col-total {
-    width: 130px;
-  }
+  .os-col-sno  { width: 48px; }
+  .os-col-item { width: auto; }
+  .os-col-unit { width: 100px; }
+  .os-col-qty  { width: 60px; }
+  .os-col-total { width: 110px; }
 
   .os-grand-label {
     font-weight: 700;
-    background: #fafafa;
+    background: #f0f4f8;
+    color: #333;
+    font-size: 13px;
   }
 
   .os-grand-total {
     font-weight: 800;
-    background: #fafafa;
+    background: #f0f4f8;
+    color: #1a6fa3;
+    font-size: 14px;
   }
 
   .os-hidden {
     display: none;
   }
 
-  /* Optional: small-screen friendliness */
   @media (max-width: 520px) {
-
-
     .os-table th,
     .os-table td {
-      padding: 7px 8px;
+      padding: 7px 7px;
+      font-size: 12px;
     }
 
     .os-title {
-      font-size: 16px;
+      font-size: 15px;
+    }
+
+    .os-col-unit,
+    .os-col-qty {
+      width: auto;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .os-table th,
+    .os-table td {
+      padding: 6px 5px;
+      font-size: 11px;
     }
   }
 </style>

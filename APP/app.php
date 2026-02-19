@@ -32,23 +32,35 @@
 <link rel="stylesheet" type="text/css" href="lib/loader.css">
 
 <style type="text/css">
-  :root{
-    /*--theme:#0485b7;*/
-    --grey:#82878a;
-    --theme:var(--grey);
-	--blue:#356C94;
-
+  :root {
+    --grey: #82878a;
+    --theme: var(--grey);
+    --blue: #356C94;
     --green: #304a89;
-    --theme-grey:#232931;
-    --default-font:"PT Sans", sans-serif;
-    --input-font:"PT Sans", sans-serif;
-    --sliders:var(--theme);
-
-/*    --lato-font:"Lato", sans-serif;*/
+    --theme-grey: #232931;
+    --default-font: "PT Sans", sans-serif;
+    --input-font: "PT Sans", sans-serif;
+    --sliders: var(--theme);
   }
 
-  .hide{display: none;}
-  .solid-hide{visibility: hidden;}
+  html, body {
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  body * {
+    font-family: "PT Sans", sans-serif;
+  }
+
+  input, select, textarea, button {
+    font-family: "PT Sans", sans-serif;
+  }
+
+  .hide { display: none; }
+  .solid-hide { visibility: hidden; }
 </style>
 
 <?php include 'lib/function.php'; ?>
@@ -109,25 +121,40 @@ var custom_height = 0;
 </form>
 
 <style type="text/css">
-  .flexer-1{
+  .main-1 {
+    padding: 12px 10px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .flexer-1 {
     display: flex;
     justify-content: space-between;
-    gap:30px;
+    gap: 24px;
   }
 
-  .flexer-1 > div:nth-child(1){width: 25%;border:0px solid red;height: 100%;}
-  .flexer-1 > div:nth-child(2){width: 75%;border:0px solid red}
+  .flexer-1 > div:nth-child(1) { width: 25%; height: 100%; }
+  .flexer-1 > div:nth-child(2) { width: 75%; }
 
-
-@media screen and (max-width: 600px) {
- /* .flexer-1{
-    flex-direction: column;
+  @media screen and (max-width: 880px) {
+    .flexer-1 {
+      flex-direction: column;
+      gap: 18px;
+    }
+    .flexer-1 > div:nth-child(1),
+    .flexer-1 > div:nth-child(2) {
+      width: 100%;
+    }
   }
 
-  .flexer-1 > div:nth-child(1){width: 100%;max-width: 1200px;}
-  .flexer-1 > div:nth-child(2){width: 100%;margin-left: revert;}
-*/
-}
+  @media screen and (max-width: 600px) {
+    .main-1 {
+      padding: 8px 6px;
+    }
+    .flexer-1 {
+      gap: 12px;
+    }
+  }
 </style>
 
 <script type="text/javascript">

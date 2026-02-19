@@ -116,7 +116,7 @@
       <!-- Earnings table -->
       <div class="es-cell white-bg">
         <div class="es-subhead grey-bg  white-text">
-          <div style="text-align:left;">EARNINGS</div>
+          <div class="subhead-earnings-label">EARNINGS</div>
           <div>RATE</div>
           <div>HOURS</div>
           <div>CURRENT</div>
@@ -132,7 +132,7 @@
             <div class="es-td"><input class="es-in es-in-sm transparent-input-clr-blck" type="text" value="40" /></div>
             <div class="es-td"><input class="es-in es-in-sm transparent-input-clr-blck" type="text" value="600.00" />
             </div>
-            <div class="es-td" style="display:none;"><input class="es-in es-in-sm transparent-input-clr-blck"
+            <div class="es-td hide-imp"><input class="es-in es-in-sm transparent-input-clr-blck"
                 type="text" value="1200.00" />
             </div>
           </div>
@@ -204,7 +204,7 @@
           <div>YTD TOTAL</div>
         </div>
 
-        <div class="es-table es-table-d white-bg " style="padding-left:5px !important;">
+        <div class="es-table es-table-d white-bg deductions-table-inner">
           <div class="es-tr border-btm">
             <div class="es-td es-lbl">FICA-MEDICARE</div>
             <div class="es-td"><input class="es-in es-in-sm transparent-input-clr-blck" type="text" value=""

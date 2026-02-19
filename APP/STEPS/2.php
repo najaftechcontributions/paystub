@@ -16,7 +16,7 @@
 </div>
 
 
-<div addon-paystubs-box="1" style="display:none;">
+<div addon-paystubs-box="1" class="hide-imp">
 
 <?php for($i=2;$i<=12;$i++){ ?>
 
@@ -34,11 +34,9 @@
 <div class="es-actions hide" action-btn="download" no-print="1">
       <h2>Generating PDF, Please Wait...</h2>
 
-  <p style="display:none;">
-    Your download will start automatically shortly. If it doesn’t, 
+  <p class="hide-imp">
+    Your download will start automatically shortly. If it doesn't,
     <a href="/download/pdfs/">click here to download</a>.
 </p>
 
 </div>
-
-

@@ -1,63 +1,60 @@
 <style>
-  /*#paypal-wrapper {
-  width: 100%;
-  max-width: 500px;
-  margin-left: 32%;
-  transform-origin: top center;
-}*/
-
-#paypal-wrapper {
-    width: 80%;
-    /* max-width: 500px; */
-    /* margin-right: 0%; */
-    transform-origin: top center;
-    margin: auto;
+  #paypal-wrapper {
+    width: 82%;
+    max-width: 680px;
+    margin: 0 auto;
     position: relative;
+    display: flex;
     flex-direction: column;
-    
-}
-
-/* @media (max-width: 1040px) {
-  #paypal-wrapper {
-   margin-left: 12%;
+    align-items: center;
+    font-family: "PT Sans", sans-serif;
   }
-}
 
-@media (max-width: 640px) {
-  #paypal-wrapper {
-   margin-left: 18%;
+  .paypal-cst-cont {
+    width: 100%;
+    max-width: 400px;
+    margin: 16px auto 0;
   }
-} */
 
+  @media (max-width: 768px) {
+    #paypal-wrapper {
+      width: 96%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #paypal-wrapper {
+      width: 100%;
+    }
+
+    .paypal-cst-cont {
+      max-width: 100%;
+    }
+  }
 </style>
 
 <script>
-  function pypl_btns_render(ev){
-    // console.log("fc:",ev);
-    // return 0;
-
+  function pypl_btns_render(ev) {
     var btns = jQuery('[happs-wrapper="paypal"]');
 
-    if(ev == "loaded_stay_hidden"){
-      btns.css("visibility","");
-      btns.css("display","none");
+    if (ev == "loaded_stay_hidden") {
+      btns.css("visibility", "");
+      btns.css("display", "none");
     }
 
-    if(ev == "loaded_stay_visile"){
-      btns.css("visibility","");
-      btns.css("display","flex");
+    if (ev == "loaded_stay_visile") {
+      btns.css("visibility", "");
+      btns.css("display", "flex");
     }
 
-
-    if(ev == "show_btns"){
-      btns.css("visibility","");
-      btns.css("display","flex");
+    if (ev == "show_btns") {
+      btns.css("visibility", "");
+      btns.css("display", "flex");
     }
 
-
-    if(ev == "hide_btns"){
-      btns.css("display","none");
+    if (ev == "hide_btns") {
+      btns.css("display", "none");
     }
-
   }
 </script>

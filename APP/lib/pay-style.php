@@ -1,6 +1,6 @@
 <style>
   /* =====================================================
-   ROOT VARIABLES (MERGED)
+   ROOT VARIABLES
 ===================================================== */
   :root {
     --es-bg: #f5f5f5;
@@ -9,27 +9,37 @@
     --es-mid: #ededed;
     --es-head: #e0e0e0;
     --es-text: #222;
-
-    /* Version 1 (dynamic blue) */
-    --es-blue1: var(--blue);
-    --es-blue2: var(--blue);
-
-    /* Version 2 (static blue override if used later) */
     --es-blue1: #2da7d9;
     --es-blue2: #1a86b7;
-
     --es-white: white;
     --es-shadow: 0 2px 10px rgba(0, 0, 0, .08);
-    --table-font: 13px;
+    --es-font: "PT Sans", sans-serif;
+    --es-header-bg: #3F5F7F;
+
+    /* Font size scale — tweak these to shift everything together */
+    --fs-xs:   10px;
+    --fs-sm:   11px;
+    --fs-base: 13px;
+    --fs-md:   14px;
+    --fs-lg:   15px;
   }
 
   /* =====================================================
-   GLOBAL RESET
+   GLOBAL RESET + FONT
 ===================================================== */
   *,
   *::before,
   *::after {
     box-sizing: border-box;
+  }
+
+  .es-wrap,
+  .es-wrap *,
+  .es-card,
+  .es-card *,
+  .es-actions,
+  .es-actions * {
+    font-family: var(--es-font);
   }
 
   .es-wrap {
@@ -41,11 +51,12 @@
     width: 100%;
     margin: 0 auto;
     background: #fff;
-    padding: 15px;
+    padding: 16px;
+    border-radius: 4px;
   }
 
   .card {
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
   }
 
   /* =====================================================
@@ -55,28 +66,38 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--es-header-bg);
+    margin-bottom: 6px;
   }
 
   .es-check {
     width: 100%;
     border: 0;
-    padding: 2px 0px;
+    padding: 3px 0;
     border-bottom: 1px solid var(--es-border);
-    ;
-    font-size: 14px;
-    color: black;
+    font-family: var(--es-font);
+    font-size: var(--fs-base);
+    color: #222;
+  }
+
+  .es-check::placeholder {
+    font-family: var(--es-font);
+    font-size: var(--fs-sm);
+    color: #aaa;
   }
 
   .es-title {
     margin-left: auto;
     width: max-content;
     text-align: right;
+    font-family: var(--es-font);
     font-weight: 800;
-    font-size: 16px;
-    letter-spacing: .8px;
-    color: black;
-    padding: 4px 0px;
+    font-size: var(--fs-md);
+    letter-spacing: 1px;
+    color: var(--es-header-bg);
+    padding: 4px 0;
+    text-transform: uppercase;
   }
 
   /* =====================================================
@@ -84,6 +105,9 @@
 ===================================================== */
   .es-grid {
     background: var(--es-bg);
+    border: 1px solid var(--es-border);
+    border-radius: 3px;
+    overflow: hidden;
   }
 
   .es-row {
@@ -91,30 +115,17 @@
     background: white;
   }
 
-  .es-row.es-1 {
-    grid-template-columns: 1fr;
-  }
-
-  .es-row.es-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .es-row.es-4 {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+  .es-row.es-1 { grid-template-columns: 1fr; }
+  .es-row.es-2 { grid-template-columns: 1fr 1fr; }
+  .es-row.es-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 
   .es-row.es-6 {
     grid-template-columns: 1fr 1.2fr 1fr 1.2fr 1.5fr .7fr;
   }
 
-  /* .es-row.es-6 .input-inner-padding{
-    background-color: #D7D7D7;
-   } */
   .es-row.es-6 input {
     background-color: transparent;
   }
-
-
 
   .es-row.es-payrow {
     grid-template-columns: 1.1fr 2fr 1fr 1fr;
@@ -125,6 +136,7 @@
 ===================================================== */
   .es-cell {
     background-color: white !important;
+    border-right: 1px solid var(--es-border);
   }
 
   .es-row .es-cell:last-child {
@@ -137,12 +149,17 @@
   .es-h {
     background: white;
     padding: 5px 0;
-    font-size: 13px;
+    font-family: var(--es-font);
+    font-size: var(--fs-xs);
     font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    line-height: 1.3;
   }
 
   .es-h2 {
-    font-size: 14px;
+    font-family: var(--es-font);
+    font-size: var(--fs-sm);
     font-weight: 700;
   }
 
@@ -152,23 +169,33 @@
   .es-in,
   .es-in-sm,
   .es-in-md,
-  select {
+  .es-cell select {
     width: 100%;
     margin: 2px 0;
-    padding: 6px 8px;
+    padding: 5px 6px;
     border: none;
-    border-bottom: 1px solid #cfcfcf;
-    font-size: 12px;
-    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    font-family: var(--es-font);
+    font-size: var(--fs-base);
     font-weight: 400;
+    background: #fff;
+    color: #222;
+    line-height: 1.4;
   }
 
   .es-cell select {
-    padding-bottom: 4.5px;
+    padding-bottom: 4px;
+    cursor: pointer;
+  }
+
+  .es-cell input::placeholder {
+    font-family: var(--es-font);
+    font-size: var(--fs-sm);
+    color: #bbb;
   }
 
   .input-inner-padding {
-    padding: 0px 5px;
+    padding: 0 5px;
   }
 
   .es-in-sm {
@@ -190,28 +217,32 @@
     justify-content: flex-end;
   }
 
+  .es-dash {
+    font-family: var(--es-font);
+    font-size: var(--fs-base);
+    color: #666;
+    flex-shrink: 0;
+  }
+
   .es-ssnmask {
-    font-size: 14px;
+    font-size: var(--fs-base);
     color: #666;
     white-space: nowrap;
   }
 
   /* =====================================================
-   UTILITY CLASSES (FROM SECOND FILE)
+   UTILITY CLASSES
 ===================================================== */
-  /* .m-t-8 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-  } */
-
   .grey-bg {
-    background: #3F5F7F !important;
+    background: var(--es-header-bg) !important;
   }
 
   .white-text {
     color: white !important;
-    font-size: 12px;
+    font-size: var(--fs-xs);
+    font-family: var(--es-font);
+    font-weight: 700;
+    letter-spacing: 0.3px;
   }
 
   .white-bg {
@@ -222,81 +253,45 @@
     background: transparent;
     border: none;
     color: white;
+    font-family: var(--es-font);
   }
 
   .transparent-input-clr-blck {
     background: transparent;
     border: none;
-    color: black;
+    color: #222;
     margin: 0;
     text-align: left;
+    font-family: var(--es-font);
   }
 
-  .border-none {
-    border: none;
-  }
-
-  .input-border-top-bottom {
-    border-left: none;
-    border-right: none;
-  }
-
-  .border-btm {
-    border-bottom: 1px solid var(--es-border);
-  }
-
-  .padding-r {
-    padding-right: 6px;
-  }
-
-  .padding-l {
-    padding-left: 6px;
-  }
-
-  .padding-l-8 {
-    padding-left: 8px;
-  }
-
-  .zero-pad-marg {
-    margin: 0;
-    padding: 0;
-  }
-
-  .row-gap {
-    gap: 5px;
-  }
+  .border-none     { border: none; }
+  .input-border-top-bottom { border-left: none; border-right: none; }
+  .border-btm      { border-bottom: 1px solid var(--es-border); }
+  .padding-r       { padding-right: 6px; }
+  .padding-l       { padding-left: 6px; }
+  .padding-l-8     { padding-left: 8px; }
+  .padding-r-8     { padding-right: 8px; }
+  .m-t-8           { margin-top: 8px; }
+  .zero-pad-marg   { margin: 0; padding: 0; }
+  .row-gap         { gap: 5px; }
+  .flex            { display: flex; }
+  .flex-row        { flex-direction: row; }
+  .flex-col        { flex-direction: column; }
+  .flex-gap-5      { gap: 5px; }
+  .p-margin p      { margin: 0 !important; }
+  .p-weight        { font-weight: 700; }
+  .margin-0        { margin: 0 !important; }
+  .txt-lft         { text-align: left !important; }
 
   .cmp-name {
+    font-family: var(--es-font);
+    font-size: var(--fs-md);
     font-weight: 700;
   }
 
-  .flex {
-    display: flex;
-  }
-
-  .flex-row {
-    flex-direction: row;
-  }
-
-  .flex-col {
-    flex-direction: column;
-  }
-
-  .flex-gap-5 {
-    gap: 5px;
-  }
-
-  .p-margin p {
-    margin: 0px !important;
-  }
-
-  .p-weight {
-    font-weight: 700;
-  }
-
-  .margin-0 {
-    margin: 0px !important;
-  }
+  .subhead-earnings-label  { text-align: left; }
+  .deductions-table-inner  { padding-left: 5px; }
 
   /* =====================================================
    EARNINGS / DEDUCTIONS TABLES
@@ -305,16 +300,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: var(--es-bg);
+    gap: 1px;
   }
 
   .es-subhead {
     display: grid;
     grid-template-columns: 1.6fr .9fr .9fr .9fr;
-    background: var(--es-dark);
-    color: var(--es-text);
-    font-size: 12px;
+    background: var(--es-header-bg);
+    color: white;
+    font-family: var(--es-font);
+    font-size: var(--fs-xs);
     font-weight: 700;
-    padding: 6px 8px;
+    padding: 7px 8px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
   }
 
   .es-subhead-d {
@@ -328,57 +327,49 @@
   .es-tr {
     display: grid;
     grid-template-columns: 1.6fr .9fr .9fr .9fr;
-    gap: 6px;
+    gap: 4px;
     align-items: center;
-    padding: 4px 0;
+    padding: 3px 0;
   }
 
   .es-table-d .es-tr {
     grid-template-columns: 1.8fr 1fr 1fr;
   }
 
-
-
-  /* Ensure the grid layout is working properly */
   .es-table-d {
     display: grid;
     grid-template-columns: 1.8fr 1fr 1fr;
     width: 100%;
-    border-left: 1px solid #ccc;
-    
+    border-left: 1px solid var(--es-border);
   }
 
-  /* Additional styling for the inputs and table */
   .es-table-d .es-td input {
     width: 100%;
-    border-bottom: 1px solid #ccc;
-    border-radius: 3px;
+    border-bottom: 1px solid #e0e0e0;
     background-color: transparent;
+    font-family: var(--es-font);
   }
 
   .es-table-d .es-tr {
     display: contents;
-    /* Ensures the grid works with rows */
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--es-border);
   }
-
 
   .es-table-d .hide-imp {
     display: none;
   }
 
-  .es-table-d .es-tr:hover {
-    background-color: #f5f5f5;
-  }
-
   .es-td.es-lbl {
-    font-size: 13px;
-    font-weight: 400;
+    font-family: var(--es-font);
+    font-size: var(--fs-sm);
+    font-weight: 600;
     margin: auto 0;
+    color: #333;
+    padding-left: 6px;
   }
 
   /* =====================================================
-   FOOTER / TOTALS (FINAL OVERRIDES)
+   FOOTER / TOTALS
 ===================================================== */
   .es-bottom {
     display: grid;
@@ -438,10 +429,10 @@
   }
 
   /* =====================================================
-   ACTIONS
+   ACTIONS / BUTTONS
 ===================================================== */
   .es-actions {
-    padding: 12px 0 8px;
+    padding: 18px 0 12px;
     text-align: center;
     background: #fff;
   }
@@ -453,35 +444,55 @@
 
   .es-btn {
     border: 0;
-    padding: 10px 24px;
+    padding: 11px 32px;
     color: #fff;
     font-weight: 700;
-    border-radius: 4px;
+    font-size: var(--fs-base);
+    font-family: var(--es-font);
+    border-radius: 5px;
     cursor: pointer;
     background: linear-gradient(180deg, var(--es-blue1), var(--es-blue2));
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 8px rgba(26, 134, 183, 0.35);
+    transition: opacity 0.2s, transform 0.15s;
+  }
+
+  .es-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
   }
 
   .es-note {
-    margin-top: 6px;
-    font-size: 12px;
+    margin-top: 8px;
+    font-size: var(--fs-xs);
+    color: #888;
+    font-family: var(--es-font);
   }
 
   [label="responsive"] {
     display: none;
   }
 
+  /* =====================================================
+   CARD PADDING HELPER
+===================================================== */
+  .card-padding {
+    padding: 20px;
+  }
 
-  /* DEPOSIT SLIP */
+  /* =====================================================
+   DEPOSIT SLIP
+===================================================== */
   .deposit-slip {
     width: 100%;
     max-width: 100%;
-    margin: 30px 0px 50px 0px;
-    /* margin: 18px auto 0; */
-    background: #f5f5f5;
+    margin: 28px 0 40px;
+    background: #f8f9fa;
     border: 1px solid #d9d9d9;
     border-radius: 6px;
-    padding: 18px 18px 12px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px;
+    font-family: var(--es-font);
     color: #222;
     box-sizing: border-box;
   }
@@ -492,11 +503,6 @@
     align-items: center;
   }
 
-  .txt-lft {
-    text-align: left !important;
-  }
-
-
   .ds-top {
     display: flex;
     justify-content: space-between;
@@ -505,106 +511,91 @@
     margin-bottom: 14px;
   }
 
-
-
   .ds-company {
-    font-size: 18px;
+    font-size: var(--fs-md);
     font-weight: 800;
     margin-bottom: 4px;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-company-sub {
-    font-size: 13px;
-    color: #444;
+    font-size: var(--fs-sm);
+    color: #555;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-right {
-    min-width: 260px;
+    min-width: 240px;
     text-align: right;
   }
-
-
 
   .ds-meta-row {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 6px;
   }
 
-
-
   .ds-meta-label {
-    font-size: 14px;
-    font-weight: 800;
+    font-size: var(--fs-sm);
+    font-weight: 700;
     color: #333;
+    font-family: var(--es-font);
   }
 
-
-
   .ds-meta-value {
-    min-width: 120px;
+    min-width: 110px;
     text-align: center;
     background: #fff;
     border: 1px solid #d0d0d0;
-    padding: 6px 8px;
-    font-size: 12px;
+    padding: 5px 8px;
+    font-size: var(--fs-sm);
     border-radius: 3px;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-mid {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin: 10px 0 14px;
+    gap: 10px;
+    margin: 10px 0 12px;
   }
 
-
-
   .ds-pay-label {
-    font-size: 13px;
+    font-size: var(--fs-sm);
     font-weight: 700;
     color: #333;
     min-width: 34px;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-amount-words {
     flex: 1;
     background: #fff;
     border: 1px solid #d0d0d0;
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 9px 12px;
+    font-size: var(--fs-base);
     font-weight: 600;
     border-radius: 3px;
     line-height: 1.2;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: var(--es-font);
   }
 
-
-
   .ds-amount-box {
-    min-width: 140px;
+    min-width: 130px;
     text-align: center;
     background: #fff;
     border: 1px solid #d0d0d0;
-    padding: 10px 10px;
-    font-size: 18px;
+    padding: 9px 10px;
+    font-size: var(--fs-lg);
     font-weight: 700;
     border-radius: 3px;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-bottom {
     display: flex;
@@ -614,109 +605,94 @@
     margin-top: 6px;
   }
 
-
-
   .ds-payee {
     flex: 1;
   }
 
-
-
   .ds-payee-label {
-    font-size: 12px;
+    font-size: var(--fs-xs);
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     color: #333;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-payee-box {
     display: inline-block;
-    min-width: 220px;
+    min-width: 200px;
     background: #fff;
     border: 1px solid #d0d0d0;
-    padding: 8px 10px;
+    padding: 7px 10px;
     border-radius: 3px;
-    font-size: 18px;
+    font-size: var(--fs-md);
     font-weight: 700;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-badge {
     text-align: right;
-    min-width: 240px;
+    min-width: 220px;
   }
-
-
 
   .ds-badge-title {
-    font-size: 18px;
+    font-size: var(--fs-md);
     font-weight: 900;
     letter-spacing: 0.5px;
+    font-family: var(--es-font);
   }
 
-
-
   .ds-badge-sub {
-    font-size: 12px;
+    font-size: var(--fs-xs);
     font-weight: 700;
     color: #333;
     margin-top: 2px;
+    font-family: var(--es-font);
   }
-
-
 
   .ds-footer {
     text-align: center;
-    font-size: 12px;
+    font-size: var(--fs-xs);
     font-weight: 700;
-    color: #333;
-    margin-top: 14px;
-    letter-spacing: 0.6px;
+    color: #555;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+    font-family: var(--es-font);
   }
 
-  .card-padding {
-    padding: 20px;
-  }
-
-  @media (max-width:1000px) {
-    .white-text {
-      font-size: 11px;
+  /* =====================================================
+   RESPONSIVE — ≤ 1000px
+===================================================== */
+  @media (max-width: 1000px) {
+    :root {
+      --fs-xs:   9px;
+      --fs-sm:   10px;
+      --fs-base: 12px;
+      --fs-md:   13px;
+      --fs-lg:   14px;
     }
 
     .es-in,
     .es-in-sm,
     .es-in-md,
-    select {
-      padding: 6px 2px;
-      font-size: 11px;
-    }
-
-    .es-td.es-lbl {
-      font-size: 11px;
+    .es-cell select {
+      padding: 5px 3px;
     }
 
     .card-padding {
-      padding: 15px;
-    }
-
-    .input-div {
-      font-size: 12px;
-    }
-
-    .flexer-1 {
-      gap: 20px;
+      padding: 14px;
     }
   }
 
-  @media (max-width:880px) {
+  /* =====================================================
+   RESPONSIVE — ≤ 880px  (side-by-side → stacked)
+===================================================== */
+  @media (max-width: 880px) {
     .flexer-1 {
       flex-direction: column;
-      gap: 30px;
+      gap: 24px;
     }
 
+    /* Step-1 panel: switch to 2-col grid */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -739,144 +715,181 @@
     }
 
     .es-title {
-      font-size: 14px
+      width: 240px;
     }
 
-    .es-check {
-      font-size: 12px;
+    .es-row.es-4,
+    .es-row.es-payrow {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .es-row.es-6 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .es-middle {
+      grid-template-columns: 1fr !important;
     }
   }
 
-  @media (max-width:650px) {
-    .es-card{
-          padding: 10px;
+  /* =====================================================
+   RESPONSIVE — ≤ 650px
+===================================================== */
+  @media (max-width: 650px) {
+    :root {
+      --fs-xs:   9px;
+      --fs-sm:   10px;
+      --fs-base: 11px;
+      --fs-md:   12px;
+      --fs-lg:   13px;
     }
+
+    .es-card {
+      padding: 8px;
+    }
+
+    .card-padding {
+      padding: 10px;
+    }
+
     .es-title {
-      font-size: 11px
-    }
-
-    .es-td.es-lbl {
-      font-size: 8px;
-    }
-
-    .ds-badge-title {
-      font-size: 12px;
-    }
-
-    .ds-badge {
-      min-width: 70%;
-    }
-
-    .ds-payee {
-      width: 30%;
-    }
-
-    .ds-company,
-    .ds-payee-box {
-      font-size: 10px;
-    }
-
-    .ds-amount-words,
-    .ds-amount-box,
-    .ds-meta-value,
-    .ds-payee-box {
-      padding: 5px 8px !important;
-      font-size: 8px;
-    }
-
-    .ds-meta-label,
-    .ds-pay-label,
-    .ds-payee-label,
-    .ds-badge-sub,
-    .ds-company-sub {
-      font-size: 8px;
-    }
-
-    .input-div>div:nth-child(1) {
-      margin: 5px 0px;
-    }
-
-    .ds-payee {
-      width: 50%;
-    }
-
-    .ds-payee-box {
-      min-width: 100%;
-    }
-
-    .ds-pay-label {
-      width: 5%;
-    }
-
-    .ds-amount-words {
-      width: 70%;
-    }
-
-    .ds-amount-box {
-      min-width: 25%;
-    }
-
-    .es-check {
-      font-size: 8px;
-    }
-
-    .white-text {
-      font-size: 6px !important;
+      font-size: 11px;
+      letter-spacing: 0.5px;
     }
 
     .es-in,
     .es-in-sm,
     .es-in-md,
-    select {
-      padding: 6px 2px;
-      font-size: 8px;
+    .es-cell select {
+      padding: 4px 2px;
     }
 
-    .es-card input::placeholder {
-      font-size: 8px !important;
+    .es-subhead {
+      padding: 5px 4px;
+    }
+
+    .es-h {
+      padding: 4px 0;
     }
 
     .es-btn {
-      font-size: 10px;
+      padding: 9px 20px;
+    }
+
+    .es-row.es-6 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Deposit slip at 650px */
+    .ds-badge       { min-width: 55%; }
+    .ds-payee       { width: 40%; }
+    .ds-pay-label   { width: 5%; }
+    .ds-amount-words { width: 65%; }
+    .ds-amount-box  { min-width: 28%; }
+    .ds-payee-box   { min-width: 100%; }
+  }
+
+  /* =====================================================
+   RESPONSIVE — ≤ 640px  (footer totals stacked)
+===================================================== */
+  @media (max-width: 640px) {
+    .es-bottom {
+      grid-template-columns: 1fr;
+    }
+
+    .es-gross,
+    .es-totalded,
+    .es-net {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 8px;
+      border-right: 0;
+    }
+
+    .es-gross .es-h2,
+    .es-totalded .es-h2,
+    .es-net .es-h2 {
+      grid-column: 1 / 2;
+      white-space: nowrap;
+    }
+
+    .es-gross .es-inline,
+    .es-totalded .es-inline,
+    .es-net .es-inline {
+      grid-column: 2 / 3;
+      justify-content: flex-end;
+    }
+
+    .es-in-md {
+      max-width: 100%;
+      width: 80px;
+    }
+
+    .h2-label {
+      background-color: transparent;
+      border: 0;
+      text-align: center;
+    }
+
+    [label="responsive"] {
+      display: revert;
     }
   }
 
+  /* =====================================================
+   RESPONSIVE — ≤ 480px  (extra small)
+===================================================== */
+  @media (max-width: 480px) {
+    .es-row.es-4,
+    .es-row.es-payrow {
+      grid-template-columns: 1fr 1fr;
+    }
 
+    .es-row.es-6 {
+      grid-template-columns: 1fr 1fr;
+    }
 
-  /* Mobile */
-  /* @media (max-width:640px) {
-
-    .ds-top,
-    .ds-bottom {
+    .es-ribbon {
       flex-direction: column;
-      align-items: stretch;
+      gap: 6px;
+    }
+
+    .es-title {
+      margin-left: 0;
       text-align: left;
+      width: auto;
+    }
+
+    /* Deposit slip extra-small */
+    .ds-top {
+      flex-direction: column;
+      gap: 8px;
     }
 
     .ds-right {
+      min-width: unset;
       text-align: left;
-      min-width: auto;
     }
 
     .ds-meta-row {
       justify-content: flex-start;
     }
 
-    .ds-mid {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .ds-amount-box {
-      width: 100%;
-    }
-
-    .ds-amount-words {
-      white-space: normal;
-    }
-
     .ds-badge {
       text-align: left;
+      min-width: unset;
     }
-  } */
-</STYLE>
+
+    .ds-bottom {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
+
+    .ds-payee {
+      width: 100%;
+    }
+  }
+</style>

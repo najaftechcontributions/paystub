@@ -1,62 +1,96 @@
 <style type="text/css">
-    .pd-x{
-        padding: 20px;
-        /*min-height: 300px;*/
-    }
+  /* =====================================================
+   STEP-1 FORM FIELDS
+===================================================== */
+  .pd-x {
+    padding: 20px;
+  }
 
-    .input-div{
-      margin-bottom: 18px;
-   }
+  .input-div {
+    margin-bottom: 18px;
+  }
 
-   .input-div > div:nth-child(1) {
+  .input-div > div:nth-child(1) {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
     font-weight: 700;
-    margin: 10px 0;
-}
+    margin: 8px 0;
+  }
 
+  .checkbox {
+    cursor: pointer;
+  }
 
-.checkbox{
-cursor: pointer;
-}
-
-.checkbox:before{
+  .checkbox:before {
     content: "\f0c8 \00a0";
     font-family: "Font Awesome 5 Pro";
     font-weight: 400;
     color: var(--theme);
     cursor: pointer;
-}
+  }
 
-.checkbox.checked:before{
+  .checkbox.checked:before {
     content: "\f14a \00a0";
     font-family: "Font Awesome 5 Pro";
     font-weight: 900;
-}
+  }
 
-[sdi-label="1"]{
+  [sdi-label="1"] {
     cursor: pointer;
-}
-</style>
+  }
 
+  /* Checkbox row (address toggle) */
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
+  .step1-checkbox {
+    transform: scale(1.4);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
 
-<style>
+  .add-address-label {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #cb1219;
+  }
+
+  /* Deposit slip price */
+  .deposit-price {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 700;
+    color: #cb1219;
+  }
+
+  /* =====================================================
+   PAYSTUB DOWNLOAD / INFO TEXT
+===================================================== */
   .paystub-dwn {
     margin: auto;
     max-width: 80%;
-    font-size: 18px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
     font-weight: 500;
     color: #6f6f6f;
-}
+    text-align: center;
+    line-height: 1.6;
+  }
 
-</style>
+  /* =====================================================
+   WATERMARK WRAPPER
+===================================================== */
+  .es-wrap-w {
+    position: relative;
+    background: #fff;
+  }
 
-<style>
-  .es-wrap-w{
-  position: relative;
-  background:#fff;
-}
-
-.wtmrk::before {
+  .wtmrk::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -65,106 +99,177 @@ cursor: pointer;
     opacity: 0.07;
     pointer-events: none;
     z-index: 111;
-}
+  }
 
-/* Ensure content is above watermark */
-.es-card,
-.es-actions{
-  position:relative;
-  z-index:1;
-}
+  .es-card,
+  .es-actions {
+    position: relative;
+    z-index: 1;
+  }
 
-
-.paystub-no-label{
+  .paystub-no-label {
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
     text-align: center;
-}
+    margin: 10px 0 6px;
+  }
 
-/*[addon-paystubs-box="1"] [addon_paystub]{display: none;}*/
-</style>
-
-
-<style>
-
-[paystub-input]{
+  /* =====================================================
+   HIDDEN PAYSTUB INPUT ROWS
+===================================================== */
+  [paystub-input] {
     display: none;
-}
+  }
 
-[addon-rows="income"]{display: none;}
+  [addon-rows="income"] {
+    display: none;
+  }
 
-</style>
+  /* =====================================================
+   ADDITIONAL PAYSTUB CARDS — 3 per row
+===================================================== */
+  .flex-addon-subs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 
+  .flex-addon-subs > div {
+    flex: 0 0 calc((100% - 32px) / 3);
+    min-width: 200px;
+  }
 
-<style>
- /* 3 per row */
-.flex-addon-subs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.flex-addon-subs > div {
-  flex: 0 0 calc((100% - 40px) / 3);
-}
+  /* Card shell */
+  .ps-box {
+    border: 2px solid var(--blue);
+    background: #fff;
+    box-sizing: border-box;
+  }
 
-/* Card */
-.ps-box {
-  border: 2px solid var(--blue);
-  background: #fff;
-}
-.paystub-title {
-  background: var(--blue);
-  color: #fff;
-  padding: 10px 12px;
-  font-size: 15px;
-  font-weight: 600;
-}
-.ps-body {
-  padding: 12px;
-}
+  .paystub-title {
+    background: var(--blue);
+    color: #fff;
+    padding: 9px 12px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
 
-/* Floating label container */
-.aps-inp {
-  position: relative;
-  margin-bottom: 14px;
-}
+  .ps-body {
+    padding: 12px;
+  }
 
-/* Border label */
-.f-label {
-  position: absolute;
-  top: -7px;
-  left: 10px;
-  background: #fff;
-  padding: 0 6px;
-  font-size: 11px;
-  color: #777;
-  letter-spacing: 0.4px;
-}
+  /* Floating label field */
+  .aps-inp {
+    position: relative;
+    margin-bottom: 16px;
+  }
 
-/* Inputs */
-.ps-input {
-  width: 100%;
-  padding: 10px 8px 8px;
-  border: 1px solid #d6d6d6;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-.ps-input:focus {
-  outline: none;
-  border-color: #0b84b4;
-}
+  .f-label {
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    background: #fff;
+    padding: 0 5px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 0.4px;
+  }
 
-/* Pay period row */
-.period-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.ps-input.small {
-  flex: 1;
-}
-.dash {
-  font-weight: 600;
-  color: #555;
-}
+  /* Inputs inside additional cards */
+  .ps-input {
+    width: 100%;
+    padding: 9px 8px;
+    border: 1px solid #d6d6d6;
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+    color: #222;
+  }
 
+  .ps-input:focus {
+    outline: none;
+    border-color: #0b84b4;
+  }
 
+  /* Pay period inline row */
+  .period-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .ps-input.small {
+    flex: 1;
+  }
+
+  .dash {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+  }
+
+  /* =====================================================
+   RESPONSIVE — ≤ 880px
+===================================================== */
+  @media screen and (max-width: 880px) {
+    .flex-addon-subs > div {
+      flex: 0 0 calc((100% - 16px) / 2);
+    }
+  }
+
+  /* =====================================================
+   RESPONSIVE — ≤ 650px
+===================================================== */
+  @media screen and (max-width: 650px) {
+    .input-div > div:nth-child(1) {
+      font-size: 12px;
+      margin: 5px 0;
+    }
+
+    .add-address-label,
+    .deposit-price {
+      font-size: 12px;
+    }
+
+    .pd-x {
+      padding: 10px;
+    }
+
+    .paystub-dwn {
+      max-width: 95%;
+      font-size: 13px;
+    }
+  }
+
+  /* =====================================================
+   RESPONSIVE — ≤ 520px
+===================================================== */
+  @media screen and (max-width: 520px) {
+    .flex-addon-subs {
+      gap: 12px;
+    }
+
+    .flex-addon-subs > div {
+      flex: 0 0 100%;
+    }
+
+    .paystub-title {
+      font-size: 12px;
+      padding: 8px 10px;
+    }
+
+    .ps-input {
+      font-size: 12px;
+      padding: 8px 6px;
+    }
+
+    .f-label {
+      font-size: 10px;
+    }
+  }
 </style>
